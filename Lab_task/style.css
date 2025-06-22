@@ -90,3 +90,171 @@
   padding: 10px;
   background-color: #f8f8f8;
 }
+.menu {
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  align-items: center; /* vertical centering */
+}
+
+/* heading sticks to the left by default */
+.menu h1 {
+  color: white;
+  font-weight: normal;
+  margin: 0 30px 0 0; /* a little breathing room */
+}
+
+/* nav-links grow to fill the space ⇒ they land in the centre */
+.nav-links {
+  flex: 1; /* take all available middle space */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* right-section slides to the far right */
+.right-section {
+  margin-left: auto; /* pushes it to the end */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-container {
+  margin-right: 0;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.special-offer-btn {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  animation: pulse 2s infinite;
+}
+
+.special-offer-btn:hover {
+  background-color: #ff6b81;
+  transform: scale(1.05);
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.special-offer-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  top: auto;
+  transform: none;
+}
+
+.special-offer-btn:hover {
+  transform: scale(1.05);
+  background-color: #ff6b81;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomBanner 20s infinite alternate;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomBanner {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
