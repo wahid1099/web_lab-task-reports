@@ -6,94 +6,121 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <link href="style.css" rel="stylesheet" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Shop With Me</title>
   </head>
   <body>
-    <div class="menu">
-      <h1>Shop With me</h1>
-      <div class="nav-links">
-        <div class="dropdown">
-          <a href="#" class="account-link" style="color: white"
-            ><u>Account</u></a
-          >
-          <div class="dropdown-content">
-            <a href="#">Profile</a>
-            <a href="#">Settings</a>
-            <a href="#">Logout</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#" class="menu-link" style="color: white"><u>Menu</u></a>
-          <div class="dropdown-content">
-            <a href="#">Milk Shake</a>
-            <a href="#">Coffee</a>
-            <a href="#">Salad</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#" class="offers-link" style="color: white"><u>Offers</u></a>
-          <div class="dropdown-content">
-            <a href="#">Today's Special</a>
-            <a href="#">Seasonal Deals</a>
-            <a href="#">Combo Offers</a>
-          </div>
-        </div>
+    <nav class="navbar">
+      <div class="nav-brand">
+        <h1>Shop With Me</h1>
       </div>
 
-      <div class="right-section">
+      <div class="nav-menu">
+        <ul class="menu-items">
+          <li class="dropdown">
+            <a href="#">Categories <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Home & Living</a></li>
+              <li><a href="#">Books</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Deals <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="#">Today's Deals</a></li>
+              <li><a href="#">Clearance</a></li>
+              <li><a href="#">Bundle Offers</a></li>
+            </ul>
+          </li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
         <div class="search-container">
-          <input type="text" placeholder="Type your item..." />
-          <button>Search</button>
+          <input
+            type="text"
+            placeholder="Search products..."
+            class="search-input"
+          />
+          <button class="search-btn"><i class="fas fa-search"></i></button>
         </div>
-
-        <div class="cart">
-          <i class="fas fa-shopping-cart"></i>
-          <span><sub>0</sub></span>
+        <div class="nav-icons">
+          <div class="icon-item">
+            <i class="far fa-heart"></i>
+            <span class="icon-label">Wishlist</span>
+          </div>
+          <div class="icon-item cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+            <span class="icon-label">Cart</span>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
 
     <div class="banner">
-      <img src="banner.jpg" alt="Banner Image" />
-      <div class="banner-text">
-        <h2>Welcome to Our Shop</h2>
-        <p>Discover Amazing Deals Today!</p>
+      <div class="banner-slider">
+        <img src="banner.jpg" alt="Banner Image" />
+        <div class="banner-text">
+          <h2>Welcome to Our Shop</h2>
+          <p>Discover Amazing Deals Today!</p>
+          <button class="cta-button">Shop Now</button>
+        </div>
       </div>
-      <button class="special-offer-btn">Special Offers!</button>
-    </div>
-
-    <div class="product-container">
-      <div class="product-card">
-        <img src="apple.jpg" alt="Product Image" />
-        <h3>Apple</h3>
-        <p class="price">15tk</p>
-      </div>
-
-      <div class="product-card">
-        <img src="banana.jpg" alt="Product Image" />
-        <h3>Banana</h3>
-        <p class="price">8tk</p>
-      </div>
-
-      <div class="product-card">
-        <img src="orange.jpg" alt="Product Image" />
-        <h3>Product Title</h3>
-        <p class="price">30tk</p>
-      </div>
-
-      <div class="product-card">
-        <img src="watermelon.jpg" alt="Product Image" />
-        <h3>Water Melon</h3>
-        <p class="price">50tk</p>
+      <div class="banner-features">
+        <div class="feature">
+          <i class="fas fa-truck"></i>
+          <span>Free Shipping</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-undo"></i>
+          <span>Easy Returns</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-shield-alt"></i>
+          <span>Secure Payment</span>
+        </div>
       </div>
     </div>
+
+    <div class="product-container" id="product-container"></div>
+
     <footer class="footer">
-      <p>Thanks for watching</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Your trusted online shopping destination</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: support@shopwithme.com</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Shop With Me. All rights reserved.</p>
+      </div>
     </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
