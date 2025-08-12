@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cafe Feedback - Shop With Me</title>
+    <style>
+      .feedback-container {
+        max-width: 800px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .feedback-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .feedback-header h2 {
+        color: var(--primary-color);
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .feedback-form {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-group label {
+        font-weight: 500;
+        color: var(--text-color);
+      }
+
+      .form-control {
+        padding: 0.8rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .rating-group {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      .rating-option {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .submit-btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        justify-self: center;
+        margin-top: 1rem;
+      }
+
+      .submit-btn:hover {
+        background: var(--secondary-color);
+        transform: scale(1.05);
+      }
+
+      .feedback-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">
+        <h1>Shop With Me</h1>
+      </div>
+
+      <div class="nav-menu">
+        <ul class="menu-items">
+          <li class="dropdown">
+            <a href="#">Categories <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Home & Living</a></li>
+              <li><a href="#">Books</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Deals <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="#">Today's Deals</a></li>
+              <li><a href="#">Clearance</a></li>
+              <li><a href="#">Bundle Offers</a></li>
+            </ul>
+          </li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Search products..."
+            class="search-input"
+          />
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-icons">
+          <div class="icon-item">
+            <i class="far fa-heart"></i>
+            <span class="icon-label">Wishlist</span>
+          </div>
+          <div class="icon-item cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+            <span class="icon-label">Cart</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="feedback-container">
+      <div class="feedback-header">
+        <img src="banner.jpg" alt="Cafe Image" class="feedback-image" />
+        <h2>We Value Your Feedback</h2>
+        <p>Help us improve your experience by sharing your thoughts</p>
+      </div>
+
+      <form class="feedback-form" id="feedbackForm">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label>How would you rate your overall experience?</label>
+          <div class="rating-group">
+            <div class="rating-option">
+              <input type="radio" id="rating1" name="rating" value="1" />
+              <label for="rating1">Poor</label>
+            </div>
+            <div class="rating-option">
+              <input type="radio" id="rating2" name="rating" value="2" />
+              <label for="rating2">Fair</label>
+            </div>
+            <div class="rating-option">
+              <input type="radio" id="rating3" name="rating" value="3" />
+              <label for="rating3">Good</label>
+            </div>
+            <div class="rating-option">
+              <input type="radio" id="rating4" name="rating" value="4" />
+              <label for="rating4">Very Good</label>
+            </div>
+            <div class="rating-option">
+              <input
+                type="radio"
+                id="rating5"
+                name="rating"
+                value="5"
+                checked
+              />
+              <label for="rating5">Excellent</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="visitFrequency">How often do you visit our cafe?</label>
+          <select id="visitFrequency" class="form-control">
+            <option value="first">This is my first visit</option>
+            <option value="rarely">Rarely</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Almost daily</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>What did you enjoy most about your visit?</label>
+          <div class="rating-group" style="flex-wrap: wrap">
+            <div class="rating-option">
+              <input type="checkbox" id="enjoy1" name="enjoy" value="food" />
+              <label for="enjoy1">Food Quality</label>
+            </div>
+            <div class="rating-option">
+              <input type="checkbox" id="enjoy2" name="enjoy" value="service" />
+              <label for="enjoy2">Service</label>
+            </div>
+            <div class="rating-option">
+              <input
+                type="checkbox"
+                id="enjoy3"
+                name="enjoy"
+                value="ambiance"
+              />
+              <label for="enjoy3">Ambiance</label>
+            </div>
+            <div class="rating-option">
+              <input type="checkbox" id="enjoy4" name="enjoy" value="price" />
+              <label for="enjoy4">Value for Money</label>
+            </div>
+            <div class="rating-option">
+              <input
+                type="checkbox"
+                id="enjoy5"
+                name="enjoy"
+                value="cleanliness"
+              />
+              <label for="enjoy5">Cleanliness</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="comments">Additional Comments</label>
+          <textarea
+            id="comments"
+            class="form-control"
+            placeholder="Please share any additional feedback or suggestions..."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Your trusted online shopping destination</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: support@shopwithme.com</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Shop With Me. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your feedback! We appreciate your input.");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
